@@ -116,7 +116,7 @@ function handleFiles() {
       storageRef.getDownloadURL()
         .then(function(url) {
           let bodyUrl = document.getElementById('url')
-          bodyUrl.innerHTML += "<br><br><br>Video '" + video.name + "' submitted. <a href='" + url + "'>Download</a>"
+          bodyUrl.innerHTML += "File '" + video.name + "' submitted.<br><a href='" + url + "'>Download</a><br><br>"
         })
         .catch( (error) => console.log(error) )
     )

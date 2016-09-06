@@ -1,0 +1,95 @@
+input {
+  width: 100%;
+}
+
+.page-content {
+  padding-top: 100px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #25bda8;
+}
+
+.full {
+  width: 100%;
+}
+
+.mui-panel h1 {
+  font-size: 28px;
+  color: #414042;
+  text-align: center;
+}
+
+.mui-panel h3 {
+  font-size: 20px;
+  color: #414042;
+  text-align: center;
+}
+
+.mdl-button--fab.mdl-button--mini-fab {
+  height: 80px;
+  width: 80px;
+}
+
+.material-icons {
+  font-size: 60px;
+}
+
+.mdl-button--fab .material-icons {
+  left: 28%;
+}
+
+.mdl-layout__container {
+  padding-top: 50px;
+  background-color: #25bda8;
+  position: relative;
+  min-height: 100vh;
+}
+
+.mui-btn {
+  height: 50px;
+  font-size: 20px !important;
+}
+
+.mui-btn--primary {
+  background-color: rgb(68, 138, 255);
+}
+
+.mui-panel {
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 16px !important;
+}
+
+.videoUpload {
+  padding-top: 25px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  height: 130px;
+}
+
+.videoUpload button {
+  height: 100%;
+}
+
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.fadeOut {
+  display: none;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.hidden {
+  display: none;
+}

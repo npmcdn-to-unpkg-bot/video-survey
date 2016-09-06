@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="text/babel" src="src/index.js"></script>
 
+  <link href="//cdn.muicss.com/mui-0.7.4/css/mui.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-blue.min.css">
+
+  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+  <script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+  <script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+  <script src="https://npmcdn.com/react@15.3.1/dist/react.min.js"></script>
+  <script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+  <script src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <script src="//cdn.muicss.com/mui-0.7.4/js/mui.min.js"></script>
+
+
+
+
+
+
+
+
+
   <meta charset="UTF-8">
   <title>What are your thoughts?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +37,22 @@
       height: 100%;
     }
 
+    body {
+      background-color: #25bda8;
+    }
+
     .full {
       width: 100%;
     }
 
     .mui-panel h1 {
       font-size: 28px;
+      color: #414042;
+      text-align: center;
+    }
+
+    .mui-panel h3 {
+      font-size: 20px;
       color: #414042;
       text-align: center;
     }
@@ -43,6 +73,17 @@
     .mdl-layout__container {
       padding-top: 50px;
       background-color: #25bda8;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .mui-btn {
+      height: 50px;
+      font-size: 20px !important;
+    }
+
+    .mui-btn--primary {
+      background-color: rgb(68,138,255);
     }
 
     .mui-panel {
@@ -117,14 +158,10 @@
   </style>
 </head>
 <body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div class="mdl-layout mdl-js-layout">
 
     <main class="mdl-layout__content">
       <div class="page-content">
-
-
-          <link href="//cdn.muicss.com/mui-0.7.4/css/mui.min.css" rel="stylesheet" type="text/css" />
-          <script src="//cdn.muicss.com/mui-0.7.4/js/mui.min.js"></script>
           <div class="mui-container" id="firstQuestionPanel">
             <div class="mui-panel">
               <h1>What is the most important improvement we could make?</h1>
@@ -295,23 +332,7 @@
 
 <div id="content"></div>
 
-<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
-<script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
-<script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
-<script src="https://npmcdn.com/react@15.3.1/dist/react.min.js"></script>
-<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
-<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-
-
-
-
-
-
-
-
-<script type="text/babel" src="src/index.js"></script>
 
 </body>
 </html>

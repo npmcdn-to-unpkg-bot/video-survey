@@ -1,24 +1,35 @@
 videos = []
 
-var Question = React.createClass({
-render: function() {
-  return (
-    <div></div>
-  )
-}
-})
-// tutorial1.js
+let questions = [
+  "What is the most important improvement we could make?",
+  "How likely are you to continue doing business with us?"
+]
+
+// Top Level component
+// Contains a panel for each question and uploaded videos
 var Survey = React.createClass({
-render: function() {
-  return (
-    <div className="survey">
-      <Question />
-    </div>
-  )
-}
+
+  getInitialState: () => { videos: [] },
+
+  render: function() {
+    return (
+      <div className="survey">
+        <Question />
+      </div>
+    )
+  }
 })
+
+let Question = React.createClass({
+  render: function() {
+    return (
+      <div></div>
+    )
+  }
+})
+
 ReactDOM.render(
-<Survey />,
+  <Survey />,
 document.getElementById('content')
 );
   // Initialize Firebase

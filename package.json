@@ -1,0 +1,25 @@
+{
+  "name": "video-feedback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python -m SimpleHTTPServer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^13.1.0",
+    "coffee-script": "^1.10.0",
+    "fetch": "^1.1.0",
+    "firebase": "^3.3.0",
+    "material-ui": "^0.15.4",
+    "mui": "^1.0.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "requirejs": "^2.3.1",
+    "requirejs-babel": "0.0.9"
+  }
+}

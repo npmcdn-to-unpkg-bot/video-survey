@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-blue.min.css">
+  <meta charset="UTF-8">
+  <title>What are your thoughts?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    input {
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .full {
+      width: 100%;
+    }
+
+    .mui-panel h1 {
+      font-size: 28px;
+      color: #414042;
+      text-align: center;
+    }
+
+    .mdl-button--fab.mdl-button--mini-fab {
+      height: 80px;
+      width: 80px;
+    }
+
+    .material-icons {
+      font-size: 60px;
+    }
+
+    .mdl-button--fab .material-icons {
+      left: 28%;
+    }
+
+    .mdl-layout__container {
+      padding-top: 50px;
+      background-color: #25bda8;
+    }
+
+    .mui-panel {
+      margin: 0 auto;
+      max-width: 800px;
+      border-radius: 16px !important;
+    }
+
+    .file_input_div {
+      padding-top: 25px;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      height: 130px;
+    }
+
+    .file_input_div button {
+      height: 100%;
+    }
+
+    .fadeIn {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 2s linear;
+    }
+
+    .material-icons {
+
+    }
+
+    .fadeOut {
+      display: none;
+      opacity: 0;
+      transition: visibility 0s 2s, opacity 2s linear;
+    }
+
+    .none {
+      display: none;
+    }
+
+    .slide{
+      z-index: 3;
+
+        width: 600px;
+        margin: 100px auto 0;
+        padding: 50px 30px 70px;
+
+        /*transition: all .4s cubic-bezier(.68, -.55, .265, 1.55);
+        /*transform: translateY(500px);*/
+
+        border-radius: 16px 16px  0 0;
+        background: #f1fbf9;
+        /*display: none;*/
+    }
+
+    .slide.active
+    {
+        /*transform: translateY(0);*/
+      display: block;
+    }
+    .active-slide{
+      display: block;
+    }
+    .slide:after
+    {
+        display: block;
+        clear: both;
+
+        content: '';
+    }
+
+  </style>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <main class="mdl-layout__content">
+      <div class="page-content">
+
+
+          <link href="//cdn.muicss.com/mui-0.7.4/css/mui.min.css" rel="stylesheet" type="text/css" />
+          <script src="//cdn.muicss.com/mui-0.7.4/js/mui.min.js"></script>
+          <div class="mui-container" id="firstQuestionPanel">
+            <div class="mui-panel">
+              <h1>What is the most important improvement we could make?</h1>
+              <div class="file_input_div">
+                  <div class="file_input">
+                    <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+                      <i class="material-icons">videocam</i>
+                      <!-- <i class="material-icons">file_upload</i> -->
+                      <input
+                        type="file"
+                        accept="video/*;capture=camcorder"
+                        id="videoQuestionOne"
+                        onchange="addFirstVideo(this.files)"
+                        class="none"
+                      >
+                    </label>
+                  </div>
+                </div>
+
+                <script>
+                videos = []
+                function addFirstVideo(files) {
+                  var video = files[0]
+                  videos.push(video)
+
+                  url = URL.createObjectURL(video)
+
+                  videoGrid = document.getElementById('videoGrid1')
+                  videoGrid.className = 'mdl-grid'
+                  video = document.getElementById('video1')
+                  video.setAttribute('src', url)
+                }
+                </script>
+
+
+
+              <div class="mdl-grid none mui--text-center" id="videoGrid1">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <video id="video1">
+                  </video>
+                </div>
+
+                <div class="mui--text-center full">
+                  <button
+                    id="firstNextButton"
+                    class="mui-btn mui-btn--primary mui-btn--raised"
+                    >
+                    Next
+                  </button>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+
+
+          <div class="mui-container hidden" id="secondQuestionPanel">
+            <div class="mui-panel">
+              <h1>How likely are you to continue doing business with us?</h1>
+              <div class="file_input_div">
+                  <div class="file_input">
+                    <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+                      <i class="material-icons">videocam</i>
+                      <input
+                        type="file"
+                        accept="video/*;capture=camcorder"
+                        id="videoQuestionTwo"
+                        onchange="addSecondVideo(this.files)"
+                        class="none"
+                      >
+                    </label>
+                  </div>
+                </div>
+
+
+                <div class="mdl-grid none mui--text-center" id="videoGrid2">
+                  <div class="mdl-cell mdl-cell--12-col">
+                    <video id="video2">
+                    </video>
+                  </div>
+
+                  <div class="mui--text-center full">
+                    <button
+                      class="mui-btn mui-btn--primary mui-btn--raised"
+                      id="submitButton"
+                      onClick="handleFiles()"
+                    >Submit</button>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+              <script>
+              function addSecondVideo(files) {
+                var video = files[0]
+                videos.push(video)
+
+                url = URL.createObjectURL(video)
+
+                videoGrid = document.getElementById('videoGrid2')
+                videoGrid.className = 'mdl-grid'
+                video = document.getElementById('video2')
+                video.setAttribute('src', url)
+              }
+
+              function handleFiles() {
+                var path = "User_" + Math.random().toString(36).substring(7)
+                storageRef = firebase.storage().ref()
+
+                panel = document.getElementById('secondQuestionPanel')
+                panel.className = "none"
+
+                successPanel = document.getElementById('successPanel')
+                successPanel.className = "mdl-grid mui--text-center"
+                bodyUrl = document.getElementById('url')
+                videos.forEach(function(video) {
+                  storageRef = storageRef.child(path + video.name)
+                  storageRef
+                  .put(video)
+                  .then(function(snapshot) {
+                    storageRef.getDownloadURL()
+                    .then(function(url) {
+                      bodyUrl.innerHTML += "<br><br><br>Video '" + video.name + "' submitted. <a href='" + url + "'>Download</a>"
+                    })
+                    .catch(function(error) {
+                      console.log(error)
+                    })
+                  })
+                  .catch(function(error) {
+                    console.log(error)
+                  })
+                })
+              }
+              </script>
+
+            </div>
+          </div>
+
+
+
+          <div class="mui-container mui--text-center none" id="successPanel">
+            <div class="mui-panel">
+              <h1>Successfully uploaded!</h1>
+              <h3>Please wait for downloads.</h3>
+                <div id="url">
+                </div>
+              </div>
+            </div>
+
+
+
+      </div>
+    </main>
+  </div>
+
+
+
+
+
+
+<div id="content"></div>
+
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+<script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+<script src="https://npmcdn.com/remarkable@1.6.2/dist/remarkable.min.js"></script>
+<script src="https://npmcdn.com/react@15.3.1/dist/react.min.js"></script>
+<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/babel" src="src/index.js"></script>
+
+</body>
+</html>

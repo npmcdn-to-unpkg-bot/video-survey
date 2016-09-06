@@ -112,14 +112,14 @@ function handleFiles() {
     // Upload video
     .put(video)
     // Display download URL on page
-    .then( (snapshot) =>
+    .then( () => {
       storageRef.getDownloadURL()
-        .then(function(url) {
+        .then( (url) => {
           let bodyUrl = document.getElementById('url')
           bodyUrl.innerHTML += "File '" + video.name + "' submitted.<br><a href='" + url + "'>Download</a><br><br>"
         })
         .catch( (error) => console.log(error) )
-    )
+    })
     .catch( (error) => console.log(error) )
   })
 }
